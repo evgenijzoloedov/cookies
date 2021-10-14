@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./gpdr.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <main >
+
+      <div class="container">
+        <div class="column">
+          <div class="box"></div>
+
+          <div class="box"></div>
+
+          <div class="box"></div>
+
+          <div class="box"></div>
+        </div>
+      </div>
+    </main>
+    <section class="tl-banner-wrapper" id="banner">
+      <article id="tlCommonGdprBanner" class="hide">
+        <div class="tl-banner box-shadow">
+          <p class="fs14">
+            This site uses cookies to deliver our services. By using our site,
+            you acknowledge that you have read and understand our
+            <stripes:link href="/terms" target="_blank"
+              >Terms of Service</stripes:link
+            >
+            and
+            <stripes:link href="/cookies" target="_blank"
+              >Cookie Policy</stripes:link
+            >. Your use of ThingLink's Products and Services, is subject to
+            these policies and terms.
+          </p>
+          <button
+            class="
+              tl-button tl-button-primary tl-button-outline tl-gdpr-btn-accept
+              md-align-start
+            "
+            id="ok-button"
+            onclick="onOkHandler()"
+          >
+            OK
+          </button>
+          <button
+            class="
+              tl-button tl-button-primary tl-button-outline tl-gdpr-btn-accept
+              md-align-start
+            "
+            id="configure"
+            onclick="onConfigureHandler()"
+          >
+            configure
+          </button>
+        </div>
+      </article>
+    </section>
+      <div class="modal-container" id="modal"role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Cookies Policy</h5>
+            <button
+              type="button"
+              class="tl-button tl-button-transparent tl-button-icon"
+            id="close-btn"
+              onclick="onCloseHandler()"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-body-row">
+              <div class="modal-body-row-header">
+                <label class="checkbox-label">
+                  <p class="checkbox-text">Google Analytics</p> <input id="google"type="checkbox" onchange="onChangeHandler()" class="checkbox-checkbox">
+                </label>
+              </div>
+              <p class="modal-body-row-desc">
+                These are cookies set by Google Analytics, which is a service we
+                use to gain a better understanding of how people use our service.
+                You can read more about Google’s privacy policy here:<a
+                  href="https://policies.google.com/faq?hl=None"
+                  target="_black"
+                >
+                  https://policies.google.com/faq?hl=None</a
+                >
+              </p>
+            </div>
+            <div class="modal-body-row">
+              <div class="modal-body-row-header">
+                <label class="checkbox-label">
+                  <p class="checkbox-text">HubSpot</p> <input type="checkbox" id="hubspot" onchange="onChangeHandler()" class="checkbox-checkbox" checked>
+                </label>
+              </div>
+              <p class="modal-body-row-desc">
+                Cookies set by our customer analytics partner, HubSpot.
+              </p>
+            </div>
+            <div class="modal-body-row">
+              <div class="modal-body-row-header">
+                <label class="checkbox-label">
+                  <p class="checkbox-text">Mixpanel</p> <input type="checkbox" id="mixpanel"  onchange="onChangeHandler()" class="checkbox-checkbox" checked>
+                </label>
+            </div>
+              <p class="modal-body-row-desc">
+                These are cookies set by Mixpanel. We use Mixpanel to gain
+                deeper understanding of how our users function in order to
+                improve our service. You can find more information about
+                Mixpanel’s privacy policy here: <a
+                  href="https://mixpanel.com/legal/privacy-policy"
+                  target="_black"
+                  >https://mixpanel.com/legal/privacy-policy</a
+                >
+              </p>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="tl-button-blue" id="save-btn" onclick="onSaveHandler()">Save changes</button>
+          </div>
+        </div>
+      </div>
+
+    <script src="script.js"></script>
+    <% if (google) { %><script src="./google.js"></script><%}%>
+    <% if (mixpanel) { %><script src="./mixpanel.js"></script><%}%>
+    <% if (hubspot) { %><script src="./hubspot.js"></script><%}%>
+
+  </body>
+</html>
